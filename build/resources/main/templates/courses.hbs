@@ -1,0 +1,16 @@
+{{#partial "title"}}Signed in{{/partial}}
+
+{{#partial "content"}}
+    <h1>Current courses</h1>
+    <ul>
+        {{#each courses}}
+            <li>{{title}}</li>
+        {{/each}}
+    </ul>
+    <form action="/courses" method="post">
+        <input type="text" placeholder="What's your course" name="course">
+        <button>Suggest</button>
+    </form>
+{{/partial}}
+
+{{> base.hbs}}

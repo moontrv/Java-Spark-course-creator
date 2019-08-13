@@ -1,0 +1,12 @@
+{{#partial "content"}}
+    <h1 class="m-test">This is the first page serving</h1>
+    <!-- TODO: add sign in method -->
+    <h4>Hello {{username}}</h4>
+    <p>View <a href="/courses">all courses</a></p>
+    <form action="/sign-in" method="post">
+        <input type="text" placeholder="What's your name?" name="username">
+        <button>Sign in</button>
+    </form>
+{{/partial}}
+
+{{> base.hbs}}
