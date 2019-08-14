@@ -3,17 +3,19 @@ package com.personal.model;
 import com.github.slugify.Slugify;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class CourseModel {
     private String title;
     private String creator;
     private String slug;
-    private Set<String> ratePerson;
+    private Set<String> raters;
 
     public CourseModel(String title, String creator) {
-        ratePerson = new HashSet<>();
+        raters = new HashSet<>();
         this.title = title;
         this.creator = creator;
 
@@ -45,12 +47,16 @@ public class CourseModel {
         this.creator = creator;
     }
 
+    public List<String> getRaters(){
+        return new ArrayList<>(raters);
+    }
+
     public boolean addRatePerson(String ratePersonName){
-        return ratePerson.add(ratePersonName);
+        return raters.add(ratePersonName);
     }
 
     public int getRateCount(){
-        return ratePerson.size();
+        return raters.size();
     }
 
     @Override

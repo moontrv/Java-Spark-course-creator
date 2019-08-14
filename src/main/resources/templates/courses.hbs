@@ -4,7 +4,11 @@
     <h1>Current courses</h1>
     <ul>
         {{#each courses}}
-            <li>{{title}}</li>
+            <li>
+                <form action="/courses/{{slug}}/rate" method="post">
+                    <a href="/courses/{{slug}}">{{ title }}</a> ({{ rateCount }} raters) <button>Rate</button>
+                </form>
+            </li>
         {{/each}}
     </ul>
     <form action="/courses" method="post">

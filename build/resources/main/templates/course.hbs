@@ -1,0 +1,16 @@
+{{#partial "title"}}Single course{{/partial}}
+
+{{#partial "content"}}
+    <h1>{{course.title}}</h1>
+    <h2>{{course.rateCount}} Raters</h2>
+    <ul>
+        {{#each course.raters}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <form action="/courses/{{course.slug}}/rate" method="post">
+        <button>Rate</button>
+    </form>
+{{/partial}}
+
+{{> base.hbs}}
